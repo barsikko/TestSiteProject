@@ -15,7 +15,7 @@
 ## AFTER GIT CLONE
 
    - cd /src
-   - cp .env.xample .env
+   - cp .env.example .env
    - composer update
    - cd ../
    - docker-compose up -d --build

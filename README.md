@@ -20,6 +20,8 @@
    - cd ../
    - docker-compose up -d --build
    - docker-compose exec php php artisan migrate
+   - docker-compose exec php chown laravel:laravel storage/logs/laravel.log
+   - docker-compose exec php php artisan key:generate
 
 ## NOTES
 

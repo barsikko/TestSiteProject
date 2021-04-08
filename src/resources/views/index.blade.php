@@ -21,7 +21,7 @@
   </div>
  <div class="form-group">
     <label for="phone">Номер телефона:</label>
-    <input type="number" class="form-control" name="phone" value="{{ old('number') }}" id="phone" placeholder="Введите номер вашего телефона">
+    <input type="number" class="form-control" name="phone" value="{{ old('phone') }}" id="phone" placeholder="Введите номер вашего телефона">
   </div>
   <div class="form-group">
     <label for="birth_date">Дата рождения:</label>

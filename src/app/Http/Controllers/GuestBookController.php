@@ -22,7 +22,7 @@ class GuestBookController extends Controller
 
 		 $rules = [
             'name' => 'required|max:255',
-            'phone' => 'required|numeric',
+            'phone' => 'required|regex:/^\+7\([0-9]+\).[0-9]{3}-[0-9]{2}-[0-9]{2}$/',
           	'birth_date' => 'required|date_format:m/d/Y',
         ];
 
@@ -31,5 +31,16 @@ class GuestBookController extends Controller
 		GuestBook::create($request->all());
 
 		return redirect()->back()->with('success', 'Запись в базу данных успешно добавлена');   
+	}
+
+	public function getPhoneList(Request $request)
+	{
+		if ($request->show == 1)
+		{
+			$phones = GuestBook::select('phone')
+						->get();
+								
+			return response()->json($phones);
+		}
 	}
 }

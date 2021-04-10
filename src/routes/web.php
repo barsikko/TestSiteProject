@@ -18,3 +18,6 @@ use App\Http\Controllers\GuestBookController;
 Route::get('/', [GuestBookController::class, 'index']);
 
 Route::post('send', [GuestBookController::class, 'store'])->name('send');
+
+Route::post('get_phone_list', [GuestBookController::class, 'getPhoneList'])
+		->name('get_phone_list');
